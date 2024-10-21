@@ -114,12 +114,14 @@ if st.button("Send"):
     response = groq_chat.invoke(messages)
     response = json.loads(response.json())
     response_content = response['content']
-    st.session_state.response = response_content
-    # st.write(response_content)
+    # st.session_state.response = response_content
+    with st.spinner("Thinking..."):
+        time.sleep(1)
+        st.success(response_content)
 
-#print session state response
-if st.session_state.response:
-    st.write(st.session_state.response)
+# #print session state response
+# if st.session_state.response:
+#     st.write(st.session_state.response)
 
 
 answer = st.text_input("Enter the password", value="")
