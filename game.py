@@ -71,6 +71,8 @@ elif level == "Level 3":
 else:
     system_prompt = sp0
     pwd = p0
+    st.header("Level 1")
+    st.warning("The assistant has the password. You can simply ask the assistant for the password.")
 
 
 
@@ -120,7 +122,7 @@ if st.session_state.response:
     st.write(st.session_state.response)
 
 
-answer = st.text_input("Password", value="")
+answer = st.text_input("Enter the password", value="")
 if st.button("Submit"):
     if answer == pwd:
         # st.write(pwd)
